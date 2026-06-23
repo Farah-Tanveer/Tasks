@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox vs Grid Comparison</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f4f6f9;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        h2 { margin-top: 0; color: #333; }
+        p { color: #666; margin-bottom: 15px; }
+
+        /* Shared item styling */
+        .item {
+            background-color: #00cbc6;
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid #009794;
+            border-radius: 4px;
+        }
+        /* Item 5 has extra text to show content-driven layout */
+        .item-5 {
+            background-color: #ffc048;
+            border-color: #ef9f00;
+        }
+
+        /* 1. FLEXBOX LAYOUT (Content-Driven) */
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to drop to the next line */
+            gap: 15px;       /* Spacing between items */
+        }
+        .flex-container .item {
+            flex: 1 1 150px; /* Grow, shrink, and basis */
+        }
+
+        /* 2. GRID LAYOUT (Container-Driven) */
+        .grid-container {
+            display: grid;
+            /* Defines exactly 3 strict equal columns */
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. FLEXBOX SECTION -->
+    <div class="section">
+        <h2>1. Flexbox Layout (One-Dimensional)</h2>
+        <p>Items line up in a row. Notice how Item 5 expands to fill the leftover empty space on the second line. The rows do not align vertically with each other.</p>
+        <div class="flex-container">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item item-5">Item 5 (Has longer text content)</div>
+        </div>
+    </div>
+
+    <!-- 2. GRID SECTION -->
+    <div class="section">
+        <h2>2. Grid Layout (Two-Dimensional)</h2>
+        <p>Items follow a strict structural template. Even if Item 5 has different content size or stands alone on the second row, it stays locked into its assigned column path.</p>
+        <div class="grid-container">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item item-5">Item 5 (Has longer text content)</div>
+        </div>
+    </div>
+
+</body>
+</html>
