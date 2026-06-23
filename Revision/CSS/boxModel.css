@@ -1,0 +1,10 @@
+/* Every element in CSS has
+Margin
+Padding
+Border
+content */
+div{
+    margin: 20px; /*outside space */
+    border: 1px solid black;
+    padding: 10px;  /*inside space */
+}

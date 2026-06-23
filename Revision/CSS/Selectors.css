@@ -1,0 +1,14 @@
+/* Element */
+h1{
+    color: red;
+}
+
+/* Class */
+.heading{
+    color:blueviolet
+}
+
+/* ID */
+#title{
+    color:aqua
+}
