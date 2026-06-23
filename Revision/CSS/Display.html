@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display Property Comparison</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.5;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        /* Custom styles for the demo boxes */
+        .box {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            margin: 10px;
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid #2980b9;
+            
+            /* Setting explicit width and height to test if the display type respects them */
+            width: 150px;
+            height: 50px;
+        }
+
+        /* 1. Display: Block */
+        .display-block {
+            display: block;
+        }
+
+        /* 2. Display: Inline */
+        .display-inline {
+            display: inline;
+        }
+
+        /* 3. Display: Inline-Block */
+        .display-inline-block {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. BLOCK -->
+    <div class="container">
+        <h2>1. display: block</h2>
+        <p>Characteristics: Starts on a new line. Takes up the full width available. Respects width and height properties.</p>
+        <div class="box display-block">Block 1</div>
+        <div class="box display-block">Block 2</div>
+        <div class="box display-block">Block 3</div>
+    </div>
+
+    <!-- 2. INLINE -->
+    <div class="container">
+        <h2>2. display: inline</h2>
+        <p>Characteristics: Does NOT start on a new line. Sits side-by-side. <strong>Ignores</strong> width and height properties (notice the size of the boxes matches only the text content).</p>
+        <div class="box display-inline">Inline 1</div>
+        <div class="box display-inline">Inline 2</div>
+        <div class="box display-inline">Inline 3</div>
+    </div>
+
+    <!-- 3. INLINE-BLOCK-->
+    <div class="container">
+        <h2>3. display: inline-block</h2>
+        <p>Characteristics: Best of both worlds. Sits side-by-side on the same line like <em>inline</em>, but <strong>respects</strong> width and height properties like <em>block</em>.</p>
+        <div class="box display-inline-block">Inline-Block 1</div>
+        <div class="box display-inline-block">Inline-Block 2</div>
+        <div class="box display-inline-block">Inline-Block 3</div>
+    </div>
+
+</body>
+</html>
