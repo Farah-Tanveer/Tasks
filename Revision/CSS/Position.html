@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Comparison</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+            height: 2000px; /* Extra height to allow scrolling */
+        }
+        .container {
+            background: white;
+            border: 3px dashed #333;
+            padding: 20px;
+            margin-bottom: 40px;
+            position: relative; /* Acts as the anchor parent for absolute elements */
+            height: 200px;
+        }
+        h2 { margin-top: 0; color: #222; }
+        p { color: #666; font-size: 14px; }
+        
+        /* Base styling for our test boxes */
+        .box {
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            width: 120px;
+            text-align: center;
+        }
+
+        /* 1. Relative Styling */
+        .pos-relative {
+            position: relative;
+            top: 20px;
+            left: 30px;
+            background-color: #4caf50;
+        }
+
+        /* 2. Absolute Styling */
+        .pos-absolute {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #2196f3;
+        }
+
+        /* 3. Fixed Styling */
+        .pos-fixed {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #f44336;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* 4. Sticky Styling */
+        .pos-sticky {
+            position: sticky;
+            top: 10px;
+            background-color: #9c27b0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Scroll down to see Fixed and Sticky layouts in action!</h2>
+
+    <!-- 1. RELATIVE -->
+    <div class="container">
+        <h2>1. Position: Relative</h2>
+        <p>Moved 20px down, 30px left from its normal spot. The gap it left behind remains empty.</p>
+        <div class="box pos-relative">Relative</div>
+    </div>
+
+    <!-- 2. ABSOLUTE -->
+    <div class="container">
+        <h2>2. Position: Absolute</h2>
+        <p>Torn out of normal layout. Pinpointed exactly 10px from the bottom-right of this dashed container.</p>
+        <div class="box pos-absolute">Absolute</div>
+    </div>
+
+    <!-- 3. STICKY -->
+    <div class="container">
+        <h2>3. Position: Sticky</h2>
+        <p>Acts normal at first. Scrolls with the page until it hits 10px from the top, then sticks inside its container.</p>
+        <div class="box pos-sticky">Sticky</div>
+    </div>
+
+    <!-- 4. FIXED -->
+    <div class="box pos-fixed">Fixed Box</div>
+
+</body>
+</html>
