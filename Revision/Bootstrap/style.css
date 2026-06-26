@@ -4,3 +4,7 @@ body{
     background-color: #6f42c1;
     border-color: #6f42c1;
 }
+/* to override the bootstrap class colors */
+.card-body{
+    background-color: antiquewhite;
+}
