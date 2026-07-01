@@ -7,7 +7,7 @@ let arr = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA0GzJpm0E1HI8
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7go1DpBhMV03Z1xuQyfb0eYaEWGWnJa8_Nw&s"];
         let s = ""
     for(let i=1;i<=60;i++){
-        let r = Math.floor(Math.random()*6)
+        let r = Math.floor(Math.random()*arr.length)
         s+=`<div class="card">
                 <img src="${arr[r]}">
             </div>`
