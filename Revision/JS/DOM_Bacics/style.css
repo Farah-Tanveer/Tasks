@@ -15,6 +15,13 @@ main{
     justify-content: center;
     align-items: center;
 }
+#cursor{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: aqua;
+    position: absolute;
+}
 .rect{
     display: flex;
 }

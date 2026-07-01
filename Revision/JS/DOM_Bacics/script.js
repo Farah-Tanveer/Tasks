@@ -56,3 +56,10 @@ s4.addEventListener("click",function(){
     s2.style.backgroundColor = "bisque"
     s3.style.backgroundColor = "bisque"
 })
+
+let crsr = document.getElementById("cursor");
+let main = document.querySelector("main");
+main.addEventListener("mousemove",function(details){
+    crsr.style.left = details.x + "px";
+    crsr.style.top = details.y + "px";
+})
